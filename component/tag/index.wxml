@@ -1,0 +1,5 @@
+<!--component/tag/index.wxml-->
+<view class="tag tag-class" bindtap='tapTag'>
+  <text>{{content}}</text>
+  <slot name="addNum"></slot>
+</view>

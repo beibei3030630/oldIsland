@@ -1,0 +1,6 @@
+<!--component/classic/movie/index.wxml-->
+<view class="container" hidden="{{hidden}}">
+  <image class="poster" src="{{poster}}"></image>
+  <image class="illustration" src="./images/typeImage.png"></image>
+  <text class="quote">{{quote}}</text>
+</view>

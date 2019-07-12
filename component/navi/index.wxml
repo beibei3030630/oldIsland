@@ -1,0 +1,8 @@
+<!--component/navi/index.wxml-->
+<view class="container">
+  <image class="switchLeft btn" wx:if="{{isLast}}" src="./images/switchLeft@dis.png"></image>
+  <image class="switchLeft btn" wx:else src="./images/switchLeft.png" bindtap="switchLeft"></image>
+  <text class="subTitle">{{subTitle}}</text>
+  <image class="switchRight btn" src="./images/switchRight@dis.png" wx:if="{{isFirst}}"></image>
+  <image class="switchRight btn" src="./images/switchRight.png" wx:else bindtap='switchRight'></image>
+</view>

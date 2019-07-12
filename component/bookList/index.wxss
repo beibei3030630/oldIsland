@@ -1,0 +1,54 @@
+/* component/bookList/index.wxss */
+
+.bookList {
+  display: flex;
+  flex-direction: row;
+  padding: 0 80rpx;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.singleBook {
+  width: 250rpx;
+  height: 350rpx;
+  box-shadow: 2rpx 2rpx 1rpx #c6c6c3;
+  margin-bottom: 80rpx;
+}
+
+.singleBook .coverImg {
+  width: 100%;
+  height: 100%;
+}
+
+.bookInfo {
+  height: 95rpx;
+  background-color: #fff;
+  position: relative;
+  bottom: 122rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10rpx 8rpx;
+}
+
+.bookInfo .title {
+  font-size: 28rpx;
+}
+
+.bookInfo .author {
+  font-size: 24rpx;
+  color: #c6c6c3;
+}
+
+.bookInfo .likeNum {
+  font-size: 22rpx;
+  color: #ccc;
+  align-self: flex-end;
+}
+
+.bookInfo .textHidden {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 210rpx;
+}

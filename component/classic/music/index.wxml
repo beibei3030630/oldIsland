@@ -1,0 +1,7 @@
+<!--component/classic/essay/index.wxml-->
+<view class="container" hidden="{{hidden}}">
+  <image class="musicPoster {{controlBtn?'Rotation':''}}" src="{{poster}}"></image>
+  <image class="controlBtn" src="{{controlBtn?pauseBtn:playBtn}}" bindtap='controlMusic'></image>
+  <image class="music_type" src="./images/typeImage.png"></image>
+  <text class="quote">{{quote}}</text>
+</view>

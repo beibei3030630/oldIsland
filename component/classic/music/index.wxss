@@ -1,0 +1,35 @@
+/* component/classic/music/index.wxss */
+@import "../commonStyle.wxss";
+.musicPoster{
+  width: 420rpx;
+  height:420rpx;
+  border-radius: 50%;
+  position: relative;
+}
+.controlBtn{
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  top: 240rpx;
+}
+.music_type{
+  height: 127rpx;
+  width: 46rpx;
+  position: relative;
+  bottom: 30rpx;
+  right: 300rpx;
+}
+@keyframes rotation{
+  from{
+    transform: rotate(0deg);
+  }to{
+    transform: rotate(360deg);
+  }
+}
+.Rotation{
+  animation: rotation 12s linear infinite;
+  -moz-animation: rotation 12s linear infinite;
+  -webkit-animation: rotation 12s linear infinite;
+  -o-animation: rotation 12s linear infinite;
+}
+

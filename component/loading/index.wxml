@@ -1,0 +1,10 @@
+<!--component/loading/index.wxml-->
+<view class="mainContainer">
+  <view class="loadingContaienr">
+    <view class="dot white"></view>
+    <view class="dot"></view>
+    <view class="dot"></view>
+    <view class="dot"></view>
+    <view class="dot"></view>
+  </view>
+</view>

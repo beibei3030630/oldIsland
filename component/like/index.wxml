@@ -1,0 +1,5 @@
+<view class="container" bindtap='onLike'>
+ <image class="likePic" src="{{likeStatus?like:notLike}}"></image>
+ <text class="likeNum">{{likeNum}}</text>
+</view>
+

@@ -1,0 +1,20 @@
+/* component/navi/index.wxss */
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 550rpx;
+  background-color: #f7f7f7;
+  margin: 0 auto;
+  justify-content: space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+image.btn{
+  width: 80rpx;
+  height: 80rpx;
+  
+}
+.subTitle{
+  font-size: 28rpx;
+}

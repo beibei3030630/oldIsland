@@ -1,0 +1,10 @@
+<!--pages/myDetail/myDetail.wxml-->
+<view class="classicContainer">
+  <view class="headerInfo">
+    <v-episode index="{{episodeIndex}}"/>
+    <v-like likeStatus="{{likeData.like_status}}" likeNum="{{likeData.fav_nums}}" bind:like="onLike"/>
+  </view>
+  <v-movie wx:if="{{dailyType==100}}" poster="{{dailyData.image}}" quote="{{dailyData.content}}"/>
+  <v-music wx:if="{{dailyType==200}}" poster="{{dailyData.image}}" quote="{{dailyData.content}}" playerSrc="{{dailyData.url}}" playerTitle="{{dailyData.title}}"/>
+  <v-essay wx:if="{{dailyType==300}}" poster="{{dailyData.image}}" quote="{{dailyData.content}}"/>
+</view>

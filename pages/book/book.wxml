@@ -1,0 +1,15 @@
+<!--pages/book/book.wxml-->
+<wxs src="../../utils/filter.wxs" module="util" />
+<view class="mainContainer" wx:if="{{!searchFlag}}">
+  <view class="searchContainer">
+    <view class="searchPanel" bindtap='searchBook'>
+      <icon class="iconfont searchIcon"></icon>
+      <text>搜索图书名称</text>
+    </view>
+  </view>
+  <view class="bookContainer">
+    <image class="logo" src="../../images/icon/chosenLogo.png"></image>
+    <v-bookList bookList="{{bookList}}" bind:toBookDetail="toBookDetail"/>
+  </view>
+</view>
+<v-search wx:if="{{searchFlag}}" bind:cancelSearch="cancelSearch" loadMore="{{loadMore}}"/>

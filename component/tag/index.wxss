@@ -1,0 +1,10 @@
+/* component/tag/index.wxss */
+
+.tag {
+  font-size: 30rpx;
+  padding: 5rpx 10rpx;
+  background-color:#eee;
+  color:#5e5e5e;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}

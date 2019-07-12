@@ -1,0 +1,137 @@
+/* component/loading/index.wxss */
+
+.mainContainer {
+  /* 以下可以修改背景颜色
+  background-color: #aaa; */
+  /* 以下可以配合loadingContainer撑满整个页面，方便动画居中显示 
+  position: fixed;
+  width: 100%;
+  height: 100%; */
+  /* 以下的属性因为loadingContainer有动画，如果让这个动画和onreachbottom配合用，
+  就会造成抖屏，所以用一个高度比loadingContainer高的容器包住它，就不会抖了 */
+  height: 3.5em;
+}
+
+.loadingContaienr {
+  /* 这里可以调整动画组件的位置
+  position: absolute;
+  top: 40%;
+  left: 40%; */
+  margin: auto;
+  width: 3.125em;
+  height: 3.125em;
+  animation: rotate 2.4s linear infinite;
+}
+
+.white {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  animation: flash 2.4s linear infinite;
+  opacity: 0;
+}
+
+.dot {
+  position: absolute;
+  margin: auto;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 100%;
+  transition: all 1s ease;
+}
+
+.dot:nth-child(2) {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #f44;
+  animation: dotsY 2.4s linear infinite;
+}
+
+.dot:nth-child(3) {
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #fb3;
+  animation: dotsX 2.4s linear infinite;
+}
+
+.dot:nth-child(4) {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #9c0;
+  animation: dotsY 2.4s linear infinite;
+}
+
+.dot:nth-child(5) {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #33b5e5;
+  animation: dotsX 2.4s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  10% {
+    width: 3.125em;
+    height: 3.125em;
+  }
+
+  66% {
+    width: 1.2em;
+    height: 1.2em;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    width: 3.125em;
+    height: 3.125em;
+  }
+}
+
+@keyframes dotsY {
+  66% {
+    opacity: 0.1;
+    width: 1.2em;
+  }
+
+  77% {
+    opacity: 1;
+    width: 0;
+  }
+}
+
+@keyframes dotsX {
+  66% {
+    opacity: 0.1;
+    height: 1.2em;
+  }
+
+  77% {
+    opacity: 1;
+    height: 0;
+  }
+}
+
+@keyframes flash {
+  33% {
+    opacity: 0;
+    border-radius: 0%;
+  }
+
+  55% {
+    opacity: 0.6;
+    border-radius: 100%;
+  }
+
+  66% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,37 @@
+<!--component/thumbnail/index.wxml-->
+<view class="mainContainer">
+  <block wx:for="{{newDataArr}}" wx:key="">
+    <view class="singleContainer" bindtap="toClassicDetail" data-classic-type="{{item.type}}" data-classic-id="{{item.id}}">
+      <view class="info">
+        <!-- 第一种方法，使用wxs的方法
+        <v-tag content="{{util.processTagType(item.type)}}" /> -->
+
+        <!-- 第二种方法，采用properties的observer方法 -->
+        <v-tag content="{{item.typeText}}" />
+        <v-like likeStatus="{{item.fav_nums}}" likeNum="{{item.fav_nums}}" readOnly="{{true}}" />
+      </view>
+      <view class="poster">
+        <image hidden="{{item.type==200}}" src="{{item.image}}" />
+        <image hidden="{{item.type!=200}}" class="posterCircle" src="{{item.image}}"></image>
+      </view>
+      <view class="summaryContainer">
+        <view>{{item.content}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+<wxs module="util">
+  var processTagType = function(typeNum) {
+    if (typeNum == 100) {
+      return "电影"
+    } else if (typeNum == 200) {
+      return "音乐"
+    } else if (typeNum == 300) {
+      return "诗句"
+    }
+  }
+
+  module.exports = {
+    processTagType: processTagType
+  }
+</wxs>

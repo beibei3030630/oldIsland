@@ -1,0 +1,27 @@
+<!--pages/classic/classic.wxml-->
+<view class="classicContainer">
+  <view class="headerInfo">
+    <v-episode index="{{episodeIndex}}" />
+    <view class="userTrigger">
+      <v-like likeStatus="{{likeData.likeStatus}}" likeNum="{{likeData.likeNum}}" bind:like="onLike" />
+      <!-- 方法一 自定义image-button -->
+      <!-- <v-image-button open-type="share">
+        <image src="{{shareBtnImg}}" slot="img" class="shareBtn"/>
+      </v-image-button> -->
+
+      <!-- 方法二 lin-ui 中的button组件 和icon组件-->
+      <!-- <l-button special="{{true}}" open-type="share">
+        <l-icon name="share" color="#000" size="30"/>
+      </l-button> -->
+      
+      <!-- 方法三 lin-ui 中的button组件和插槽,插槽不需要命名,直接在组件名中间使用即可-->
+      <l-button special="{{true}}" open-type="share">
+        <image src="{{shareBtnImg}}" class="shareBtn" />
+      </l-button>
+    </view>
+  </view>
+  <v-movie wx:if="{{dailyType==100}}" poster="{{dailyData.image}}" quote="{{dailyData.content}}" />
+  <v-music wx:if="{{dailyType==200}}" poster="{{dailyData.image}}" quote="{{dailyData.content}}" playerSrc="{{dailyData.url}}" playerTitle="{{dailyData.title}}" />
+  <v-essay wx:if="{{dailyType==300}}" poster="{{dailyData.image}}" quote="{{dailyData.content}}" />
+  <v-navi class="navi" subTitle="{{dailyData.title}}" isLast="{{isLast}}" isFirst="{{isFirst}}" bind:switchNavi="switchNavi" />
+</view>

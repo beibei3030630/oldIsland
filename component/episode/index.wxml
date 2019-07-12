@@ -1,0 +1,30 @@
+<!--component/episode/index.wxml-->
+<view class="container">
+  <view class="numContainer">
+    <text>No.</text>
+    <text class="index">{{util.processIndex(index)}}</text>
+  </view>
+  <text class="separator"></text>
+  <view class="date">
+    <text>{{util.processMonth()}}</text>
+    <text>{{util.processYear()}}</text>
+  </view>
+</view>
+<wxs module="util">
+  var currentDate = getDate();
+  var processMonth = function() {
+    var monthArr = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
+    return monthArr[currentDate.getMonth()]
+  }
+  var processYear = function() {
+    return currentDate.getFullYear();
+  }
+  var processIndex = function(param) {
+    return param < 10 ? '0' + param : param;
+  }
+  module.exports = {
+    processMonth: processMonth,
+    processYear: processYear,
+    processIndex:processIndex
+  }
+</wxs>
