@@ -1,0 +1,10 @@
+<template name="bookSummary">
+  <view class="singleBook" >
+    <image class="coverImg" src="{{image}}"></image>
+    <view class="bookInfo">
+      <text class="title textHidden">{{title}}</text>
+      <text class="author textHidden">{{author}}</text>
+      <text class="likeNum">{{fav_nums}}喜欢</text>
+    </view>
+  </view>
+</template>

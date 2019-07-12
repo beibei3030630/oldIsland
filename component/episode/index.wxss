@@ -1,0 +1,25 @@
+/* component/episode/index.wxss */
+.container{
+  display:inline-flex;
+  font-size: 30rpx;
+  height: 60rpx;
+}
+.numContainer{
+  display: flex;
+  align-items: baseline;
+}
+.numContainer .index{
+  font-size: 60rpx;
+  line-height: 60rpx;
+}
+ .separator{
+  border-right: 2rpx solid #000;
+  margin:  10rpx;
+  height: 44rpx;
+}
+.date{
+  margin-top: 5rpx;
+  font-size:20rpx;
+  display: flex;
+  flex-direction:column;
+}

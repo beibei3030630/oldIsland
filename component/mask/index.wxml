@@ -1,0 +1,2 @@
+<!--component/mask/index1.wxml-->
+<view class="mask" hidden="{{hidden}}"></view>

@@ -1,0 +1,2 @@
+/* component/classic/movie/index.wxss */
+@import "../commonStyle.wxss";

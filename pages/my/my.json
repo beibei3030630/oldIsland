@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-thumbnailList": "/component/thumbnailList/index",
+    "v-image-button":"/component/image-button/index"
+  }
+}

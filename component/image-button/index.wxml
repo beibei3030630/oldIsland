@@ -1,0 +1,4 @@
+<!--component/image-button/index.wxml-->
+<button class="buttonContainer" open-type="{{openType}}" bindgetuserinfo="getUserInfo" plain="{{true}}">
+  <slot name="img"></slot>
+</button>

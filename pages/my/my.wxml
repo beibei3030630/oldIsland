@@ -1,0 +1,25 @@
+<!--pages/my/my.wxml-->
+<view class="mainContainer">
+  <image class="bgImage" src="/images/bgImage.png"></image>
+  <v-image-button wx:if="{{!userInfoFlag}}" class="authorizeBtn" openType="getUserInfo" bind:getUserInfo="getUserInfo">
+    <image slot="img" src="/images/icon/clickButton.png" class="avatar" />
+  </v-image-button>
+  <view class="userInfo" wx:if="{{userInfoFlag}}">
+    <image src="{{userInfo.avatarUrl}}"></image>
+    <text>{{userInfo.nickName}}</text>
+  </view>
+  <view class="aboutContainer">
+    <view>
+      <image src="/images/icon/info.png" class="infoIcon"></image>
+      <view class="aboutTitle">关于我们</view>
+    </view>
+    <view>
+      <view class="bookNum">{{bookNum}}</view>
+      <view class="aboutTitle">我的书单</view>
+    </view>
+  </view>
+  <view class="likeContainer">
+    <image class="likeLogo" src="/images/icon/likeLogo.png"></image>
+    <v-thumbnailList thumbnailList="{{thumbnailList}}" bind:toClassicDetail="toClassicDetail" />
+  </view>
+</view>

@@ -1,0 +1,95 @@
+<!--pages/bookDetail/bookDetail.wxml-->
+<wxs src="../../utils/filter.wxs" module="util" />
+
+<view class="mainContainer">
+  <view class="blockContainer bookSummary">
+    <image class="poster" src="{{bookDetail.image}}"></image>
+    <text class="title">{{bookDetail.title}}</text>
+    <text class="author">{{bookDetail.author[0]}}</text>
+  </view>
+  <view class="blockContainer">
+    <view class="subTitle">内容简介</view>
+    <text class="summary" decode='{{true}}'>{{util.format(bookDetail.summary)}}</text>
+  </view>
+  <view class="blockContainer">
+    <view class="subTitle">短评</view>
+    <view class="commentContainer">
+      <block wx:for="{{util.filterComment(shortComment,5)}}" wx:for-item="item" wx:key='' wx:for-index="idx">
+        <v-tag content="{{item.content}}" tag-class="{{tool.highLight(idx,'ex-tag1','ex-tag2')}}">
+          <text slot="addNum" class="addNumStyle">{{'+'+item.nums}}</text>
+        </v-tag>
+      </block>
+      <text class="noComment" hidden="{{shortComment.length!=0}}">暂无评论</text>
+    </view>
+  </view>
+  <view class="blockContainer">
+    <view class="subTitle">书本信息</view>
+    <view class="bookInfo">
+      <text class="infoTitle">出版社</text>
+      <text>{{bookDetail.publisher}}</text>
+    </view>
+    <view class="bookInfo">
+      <text class="infoTitle">出版年</text>
+      <text>{{bookDetail.pubdate}}</text>
+    </view>
+    <view class="bookInfo">
+      <text class="infoTitle">页数</text>
+      <text>{{bookDetail.pages}}</text>
+    </view>
+    <view class="bookInfo">
+      <text class="infoTitle">定价</text>
+      <text>{{bookDetail.price}}</text>
+    </view>
+    <view class="bookInfo">
+      <text class="infoTitle">精装</text>
+      <text>{{bookDetail.binding}}</text>
+    </view>
+  </view>
+</view>
+<!-- 页面底下固定的评论框 -->
+<view class="addComment">
+  <view class="commentFrame" bindtap="addComment">
+    <text>输入短评</text>
+  </view>
+  <view class="userTrigger">
+    <v-like class="likeComponent" likeStatus="{{likeStatus}}" likeNum="{{likeNum}}" bind:like="updateLikeStatus" />
+    <v-image-button open-type="share">
+      <image src="{{shareBtnImg}}" slot="img" class="shareBtn" />
+    </v-image-button>
+  </view>
+</view>
+<!-- 点击评论框,弹出的评论区(input和标签区) -->
+<view class="submitCommit" hidden="{{!maskFlag}}">
+  <text class="tip" hidden="{{shortComment.length==0}}">仅可点击标签+1</text>
+  <text class="cancel" bindtap="cancelComment">取消</text>
+  <view class="tapCommentContainer">
+    <block wx:for="{{util.filterComment(shortComment,5)}}" wx:key="">
+      <v-tag content="{{item.content}}" tag-class="{{tool.highLight(index,'ex-tag1','ex-tag2')}}" bind:tapTag="submitComment">
+        <text slot="addNum">{{'+'+item.nums}}</text>
+      </v-tag>
+    </block>
+    <text class="noComment" hidden="{{shortComment.length!=0}}">暂无评论</text>
+  </view>
+
+  <input placeholder='短评最多12个字' placeholder-class='placeStyle' bindconfirm='submitComment' value="{{commentValue}}"></input>
+</view>
+<!-- 遮罩层 -->
+<v-mask hidden="{{!maskFlag}}" />
+<wxs module="tool">
+  var highLight = function(index, style1, style2) {
+    if (index == 0) {
+      return style1
+    }
+    if (index == 1) {
+      return style2
+    }
+    return ''
+  }
+  var confirmType = function(param) {
+    return typeof(param)
+  }
+  module.exports = {
+    highLight: highLight,
+    confirmType: confirmType
+  }
+</wxs>

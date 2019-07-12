@@ -1,0 +1,17 @@
+/* component/like/index.wxss */
+.container{
+  display: inline-flex;
+  margin-top: 10rpx;
+  margin-right:30rpx;   
+}
+.likePic{
+  width: 32rpx;
+  height: 28rpx;
+}
+.likeNum{
+  color: #a4a4a4;
+  position: relative;
+  bottom: 15rpx;
+  left: 8rpx;
+  font-size: 24rpx;
+}

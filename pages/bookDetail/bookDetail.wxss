@@ -1,0 +1,197 @@
+/* pages/bookDetail/bookDetail.wxss */
+
+.mainContainer {
+  background-color: #f5f5f5;
+  margin-bottom: 80rpx;
+}
+
+.blockContainer {
+  background-color: #fff;
+  margin-bottom: 40rpx;
+  padding: 40rpx;
+}
+
+.bookSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bookSummary .poster {
+  height: 310rpx;
+  width: 220rpx;
+  margin-bottom: 15rpx;
+}
+
+.bookSummary .title {
+  font-size: 36rpx;
+  font-weight: bold;
+  letter-spacing: 0.3em;
+}
+
+.bookSummary .author {
+  font-size: 28rpx;
+  color: rgb(145, 145, 145);
+}
+
+.blockContainer .subTitle {
+  text-align: center;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.blockContainer .summary {
+  font-size: 32rpx;
+  line-height: 50rpx;
+  color: rgb(145, 145, 145);
+  letter-spacing: 0.1em;
+  text-indent: 34rpx;
+}
+
+.blockContainer .bookInfo {
+  display: flex;
+  font-size: 30rpx;
+  color: #bbb;
+  line-height: 55rpx;
+}
+
+.blockContainer  .infoTitle {
+  width: 14%;
+  margin-right: 18rpx;
+  text-align: right;
+  color: #d6d6d6;
+}
+
+/* 短评 */
+
+.blockContainer .commentContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.commentContainer .addNumStyle {
+  margin-left: 10rpx;
+}
+
+/* 暂无评论 */
+
+.noComment {
+  font-size: 32rpx;
+  color: #7a7a7a;
+}
+
+.commentContainer .noComment {
+  text-align: center;
+  width: 100%;
+}
+.tapCommentContainer .noComment{
+  position: relative;
+  top: -15rpx;
+}
+
+/* hack方法直接改 */
+
+/* .commentContainer>v-tag:first-child>view{
+  background-color: #fffcda;
+}
+.commentContainer>v-tag:nth-child(2)>view{
+  background-color: #E9F1F4;
+}  */
+
+.ex-tag1 {
+  background-color: #fffcda !important;
+}
+
+.ex-tag2 {
+  background-color: #e9f1f4 !important;
+}
+
+/* 评论框 */
+
+.addComment {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  height: 60rpx;
+  padding: 15rpx 0 15rpx 15rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1rpx solid #e4e4e4;
+}
+
+.commentFrame {
+  border: 2rpx solid #bbb;
+  color: #bbb;
+  width: 70%;
+  border-radius: 50rpx;
+}
+
+.commentFrame text {
+  font-size: 32rpx;
+  margin-left: 20rpx;
+}
+/* 包括like 组件 image-button组件 */
+.userTrigger{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.likeComponent {
+  margin-left: 40rpx;
+  margin-top: 3rpx;
+}
+
+.shareBtn{
+  margin-left:5rpx;
+  position: relative;
+  top: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+/* 发送评论 */
+
+.submitCommit {
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  width: 95%;
+  z-index: 999;
+  padding: 40rpx 20rpx;
+}
+
+.submitCommit .tip {
+  font-size: 30rpx;
+  color: #ddd;
+}
+
+.submitCommit .cancel {
+  color: #919191;
+  font-size: 40rpx;
+  right: 30rpx;
+  position: absolute;
+  top: 22rpx;
+}
+
+.submitCommit input {
+  background-color: rgb(235, 235, 235);
+  width: 98%;
+  font-size: 30rpx;
+  color: #919191;
+}
+
+.submitCommit .placeStyle {
+  font-size: 30rpx;
+  color: #919191;
+}
+
+.submitCommit .tapCommentContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20rpx 0;
+}

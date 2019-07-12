@@ -1,0 +1,13 @@
+<!--component/bookList/index.wxml-->
+<view class="bookList">
+  <block wx:for="{{bookList}}" wx:key="">
+    <view class="singleBook" bindtap='toBookDetail' data-book-id="{{item.id}}">
+      <image class="coverImg" src="{{item.image}}"></image>
+      <view class="bookInfo">
+        <text class="title textHidden">{{item.title}}</text>
+        <text class="author textHidden">{{item.author}}</text>
+        <text class="likeNum" hidden="{{!item.fav_nums}}">{{item.fav_nums}}喜欢</text>
+      </view>
+    </view>
+  </block>
+</view>

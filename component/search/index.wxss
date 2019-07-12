@@ -1,0 +1,152 @@
+/* component/search/index.wxss */
+@import "../../style/iconfont.wxss";
+
+/* 搜索页面 */
+
+.searchPage {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.searchHead {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-top: 1rpx #e0e0e0 solid;
+  border-bottom: 1rpx #e0e0e0 solid;
+  padding: 20rpx 30rpx;
+  justify-content: space-between;
+  position: fixed;
+  background-color: #fff;
+  z-index: 99;
+  top: 0;
+  width: 93%;
+}
+
+.inputContainer {
+  background-color: #f1f1f1;
+  height: 60rpx;
+  line-height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx 40rpx;
+  align-items: center;
+  border-radius: 50rpx;
+  width: 500rpx;
+}
+
+.inputContainer input {
+  font-size: 32rpx;
+  width: 415rpx;
+  color: #aaa;
+}
+
+.inputContainer .searchIcon2:before {
+  content: "\e600";
+  color: #aaa;
+  font-size: 40rpx;
+  position: relative;
+  top:3rpx;
+  right: 8rpx;
+}
+
+.inputContainer .cancelIcon::before {
+  content: "\e63b";
+  color: rgb(197, 197, 197);
+  font-size: 36rpx;
+  position: relative;
+  top:3rpx;
+  left: 20rpx;
+}
+
+.cancelBtn {
+  font-size: 34rpx;
+  color: rgb(37, 37, 37);
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+/* 以下这个主要是searchHead fixed 后面的内容要设置margin-top，否则没用 */
+
+.searchBody {
+  margin-top: 170rpx;
+}
+
+/* 历史搜索，热门搜索 */
+
+.searchAssist {
+  margin: 20rpx 30rpx;
+}
+
+.assistHead {
+  font-size: 34rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.assistHead .line {
+  height: 36rpx;
+  background-color: #000;
+  width: 10rpx;
+  margin-right: 25rpx;
+  position: relative;
+  top: 4rpx;
+}
+
+.assistResult {
+  margin: 40rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.assistResult .noHistoryKey {
+  font-size: 32rpx;
+  color: #bebebe;
+  margin-bottom: 40rpx;
+}
+
+/* 历史搜索 删除图标 */
+
+.deleteIcon:before {
+  content: "\e63c";
+  color: #575757;
+  font-size: 42rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 5rpx;
+}
+
+/* 搜索完成页面 */
+
+.bookList {
+  display: flex;
+  flex-direction: row;
+  padding: 0 80rpx;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 70rpx;
+}
+
+.bookList .bookStyle {
+  margin-bottom: 80rpx;
+}
+
+.noSearchResult {
+  font-size: 36rpx;
+  color: #aaa;
+  position: absolute;
+  left: 13%;
+  top: 42%;
+}
+
+/* loading动画组件 */
+
+.searchPage .loadingCmp {
+  position: absolute;
+  left: 46%;
+  top: 44%;
+}

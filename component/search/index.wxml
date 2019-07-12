@@ -1,0 +1,45 @@
+<!--component/search/index.wxml-->
+<wxs src="../../utils/filter.wxs" module="util" />
+<view class="searchPage" hidden="{{hidden}}" >
+  <view class="searchHead">
+    <view class="inputContainer">
+      <icon class="iconfont searchIcon2"></icon>
+      <input placeholder="书籍名" value="{{searchContent}}" bindconfirm='onConfirm' />
+      <icon class="iconfont cancelIcon" bindtap="onDelete"></icon>
+    </view>
+    <view class="cancelBtn" bindtap="onCancel">取消</view>
+  </view>
+  <view class="searchBody" hidden="{{searchSuccessPanel}}">
+    <view class="searchAssist adjustStyle">
+      <view class="assistHead">
+        <view class="line"></view> 历史搜索
+        <icon class="iconfont deleteIcon" bindtap='onClear'></icon>
+      </view>
+      <view class="assistResult">
+        <block wx:for="{{historyList}}" wx:key="">
+          <v-tag content="{{item}}" bind:tapTag="onConfirm" />
+        </block>
+        <text class="noHistoryKey" hidden="{{historyList.length!=0}}">暂无历史搜索记录</text>
+      </view>
+    </view>
+    <view class="searchAssist">
+      <view class="assistHead">
+        <text class="line"></text> 热门搜索
+      </view>
+      <view class="assistResult">
+        <block wx:for="{{hotKeyList}}" wx:key="">
+          <v-tag content="{{item}}" bind:tapTag="onConfirm" />
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="searchBody" hidden="{{!searchSuccessPanel}}">
+    <v-bookList bookList="{{searchResult}}" bind:toBookDetail="toBookDetail" />
+    <view class="noSearchResult" hidden="{{!noResult}}">
+      没有搜索到书籍，换个关键词试试
+    </view>
+    <v-loading wx:if='{{loading}}' />
+    <!-- 等待动画的组件 -->
+  </view>
+    <v-loading wx:if="{{loadingAnimation}}" class="loadingCmp"/>
+</view>

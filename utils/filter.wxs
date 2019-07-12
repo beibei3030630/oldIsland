@@ -1,0 +1,11 @@
+var filterComment = function(arr, endNum) {
+  return arr.slice(0, endNum);
+}
+var format = function(param) {
+  var reg = getRegExp("\\\\n", "g");
+  return param.replace(reg, "\n&nbsp;&nbsp;&nbsp;");
+}
+module.exports = {
+  filterComment: filterComment,
+  format: format
+}
